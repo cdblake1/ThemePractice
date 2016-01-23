@@ -1,0 +1,64 @@
+package com.gampro;
+
+import java.util.ArrayList;
+
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonBuilderFactory;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+
+public class JsonFileBuilder {
+	
+	public static JsonObject jsonObjectBuilder(String enemyChamp, String title, ArrayList<Integer> startingItems, ArrayList<Integer> coreItems, ArrayList<Integer> endGame){
+		JsonObject matchInfo = Json.createObjectBuilder().build();
+		JsonBuilderFactory factory = Json.createBuilderFactory(matchInfo);	
+		JsonObjectBuilder builder = factory.createObjectBuilder();
+		builder.add("title", title);
+		builder.add("type", "custom");
+		builder.add("map", "any");
+		builder.add("mode", "any");
+		builder.add("priority", "false");
+		builder.add("sortrank", 0);
+		
+		JsonArrayBuilder blocks = factory.createArrayBuilder();
+		
+		JsonObjectBuilder starterItems = itemsBlockBuilder("Starting Items", startingItems, factory);
+		JsonObjectBuilder corItems = itemsBlockBuilder("Core Items", coreItems, factory);
+		JsonObjectBuilder endGameItems = itemsBlockBuilder("Final Items", endGame, factory);
+		if(starterItems != null){
+			blocks.add(starterItems);
+		}
+		if(corItems != null){
+			blocks.add(corItems);
+		}
+		if(endGameItems != null){
+			blocks.add(endGameItems);
+		}
+		builder.add("blocks", blocks);
+		return builder.build();
+	}
+
+	private static JsonObjectBuilder itemsBlockBuilder(String type, ArrayList<Integer> itemLists, JsonBuilderFactory factory) {
+		JsonObjectBuilder itemsObjectBuilder = factory.createObjectBuilder();
+		
+		itemsObjectBuilder.add("type", type);
+		itemsObjectBuilder.add("recMath", "false");
+		itemsObjectBuilder.add("minSummonerLevel", -1);
+		itemsObjectBuilder.add("maxSummonerLevel", -1);
+		itemsObjectBuilder.add("showIfSummonerSpell", "");
+		itemsObjectBuilder.add("hideIfSummonerSpell", "");
+		
+		System.out.println("type: " + type + " " + itemLists.size());
+		JsonArrayBuilder itemsArraybuilder = factory.createArrayBuilder();
+		for(int i = 0; i < itemLists.size(); i++){
+			JsonObjectBuilder itemsListObject =  factory.createObjectBuilder();
+			System.out.println("adding: " + itemLists.get(i).toString());
+			itemsListObject.add("id", itemLists.get(i).toString());
+			itemsListObject.add("count", 1);
+			itemsArraybuilder.add(itemsListObject);
+			itemsObjectBuilder.add("items", itemsArraybuilder);
+		}
+		return itemsObjectBuilder;
+	}
+}

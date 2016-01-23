@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SideScrollerGame-core/assets/characters&apos; to &apos;characters.txt&apos;" description="Rename resource &apos;characters&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="assets/characters" name="characters.txt" stamp="1436835573053" updateReferences="true"/>
+</session>

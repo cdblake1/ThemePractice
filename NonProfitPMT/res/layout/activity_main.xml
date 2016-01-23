@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+  	
+    tools:context="com.example.nonprofitpmt.MainActivity" >
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-40dp"
+        android:layout_marginBottom="-10dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_app_logo"
+        android:scaleType="fitXY"
+        android:src="@drawable/app_logo" />
+
+    <EditText
+        android:id="@+id/login_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_logo"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textStyle="normal" />
+
+    <EditText
+        android:id="@+id/pass_textfield"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_textfield"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textStyle="normal" />
+    
+    <TextView 
+            android:id="@+id/forgot_password_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pass_textfield"
+            android:clickable="true"
+            android:text="Forgot Password?"
+            android:textStyle="italic"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_alignLeft="@id/pass_textfield"
+            android:textSize="12sp"/>
+    
+    <LinearLayout
+        android:id="@+id/login_register_layout"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgot_password_click"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/login_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="startPayment"
+            android:text="@string/login" />
+
+        <Button
+            android:id="@+id/register_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="startRegistration"
+            android:text="@string/register" />
+    </LinearLayout>
+    
+    
+
+</RelativeLayout>

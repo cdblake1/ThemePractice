@@ -1,0 +1,18 @@
+package com.gampro;
+
+/*
+ * Pass 3 Arrays
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+public class CreateJson {
+
+	ArrayList<Integer> startItems = new ArrayList<Integer>;
+	ArrayList<Integer> coreItems = new ArrayList<Integer>;
+	ArrayList<Integer> finalItems = new ArrayList<Integer>;
+}

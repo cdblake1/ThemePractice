@@ -1,0 +1,42 @@
+package com.gampro;
+
+
+import javax.json.Json;
+import javax.json.JsonBuilderFactory;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+
+
+public class DoesntMatter {
+
+//	int totalitems = startingItems.size() + coreItems.size() + endGame.size();
+	public static void something(){
+		 JsonObject matchInfo = Json.createObjectBuilder().build();
+		 JsonBuilderFactory factory1 = Json.createBuilderFactory(matchInfo);
+		 JsonObject value1 = (JsonObject) factory1.createObjectBuilder()
+				.add("title", "Champ1 vs Champ2")
+				.add("type", "custom")
+				.add("map", "any")
+				.add("mode", "any")
+				.add("priority", "false")
+				.add("sortrank", 0)
+				.add("blocks",
+						factory1.createArrayBuilder()
+								.add(factory1
+										.createObjectBuilder()
+										.add("type", "Starter Items")
+										.add("recMath", "false")
+										.add("minSummonerLevel", -1)
+										.add("maxSummonerLevel", -1)
+										.add("showIfSummonerSpell", "")
+										.add("hideIfSummonerSpell", "")
+										.add("items",
+												factory1.createArrayBuilder()
+														.add(factory1
+																.createObjectBuilder()
+																.add("id",
+																		"1001")
+																.add("count", 1)))))
+				.build();
+	}
+}

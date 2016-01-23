@@ -1,0 +1,31 @@
+package com.example.landingpage;
+
+
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
+public class LandingFragmentOne extends Fragment {
+	
+	TextView title;
+	TextView contentOne;
+
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		ViewGroup rootView = (ViewGroup) inflater.inflate(
+				R.layout.frag_land_one, container, false);
+		title = (TextView)rootView.findViewById(R.id.u_give);
+		contentOne = (TextView)rootView.findViewById(R.id.content_description_one);
+//		Typeface fonesia = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Fonesia-Regular.ttf");
+		Typeface basicSerif = Typeface.createFromAsset(getActivity().getAssets(), "fonts/basicallySerif.ttf");
+//		title.setTypeface(fonesia);
+		contentOne.setTypeface(basicSerif);
+		
+		
+		return rootView;
+	}
+}

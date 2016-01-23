@@ -1,0 +1,40 @@
+package com.gampro;
+
+import java.util.ArrayList;
+import java.util.Map;
+
+import main.java.riotapi.RiotApi;
+import main.java.riotapi.RiotApiException;
+import constant.Region;
+import dto.MatchList.MatchList;
+import dto.Summoner.Summoner;
+import dto.Summoner.SummonerName;
+ 
+public class Example {
+ 
+    public static void main(String[] args) throws RiotApiException {
+ 
+//    	bf272907-42f9-4085-9470-1049579d9d2f
+    	RiotApi api = new RiotApi("470300d9-77fb-481f-b085-332443586fb8");
+ 
+//      api.setRegion(Region.NA);
+//      Map<String, Summoner> summoners = api.getSummonersByName("SuryD,HotGuy6Pack,Ekko Cat,WildTurtle,Casker,ZionSpartan,Xminie,Pobelter,Peng Yiliang,Aphromoo");
+        
+        api.setRegion(Region.NA);
+//        Fnatic HunI, Fnatic Reign0ver,FNC Febiven,FNC Rekkles,FnaticYellOwStaR,plus1,OG Amazingx,xPooks,OG Niels,mithy,
+        Map<String, Summoner> summoners = api.getSummonersByName("proteje"); 
+        for (Map.Entry<String, Summoner> entry : summoners.entrySet())
+        {
+        	ArrayList<Integer> matchIds = new ArrayList<Integer>();
+        	MatchList matchList = api.getMatchList(Region.NA, entry.getValue().getId());
+        	for(int i = 0; i < 3; i++){
+        	System.out.println(entry.getKey());
+        	matchIds.add((int) matchList.getMatches().get(i).getMatchId());
+        	
+        	}
+        	System.out.println(api.getMatch(matchIds.get(0)).getParticipantIdentities());
+//        	System.out.println(entry.getKey() + "/ " + entry.getValue().getId());
+        }
+  
+    }
+}

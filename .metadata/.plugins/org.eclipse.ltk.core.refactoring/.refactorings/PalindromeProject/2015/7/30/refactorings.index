@@ -1,0 +1,6 @@
+1437691429979	Infer generic type arguments
+1437692006865	Encapsulate field 'str'
+1437692011500	Encapsulate field 'match'
+1437692092629	Rename type 'CheckPalindrome'
+1437699507641	Rename type 'CheckIfPalindrome'
+1437703081413	Delete element

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <color name="state">#3F66AC</color>
+    <color name="church">#112D5F</color>
+    <color name="city">#38568C</color>
+    <color name="street">#38568C</color>
+    <color name="bg">#9EBDF6</color>
+    <color name="solidbg">#779ECB</color>
+
+</resources>

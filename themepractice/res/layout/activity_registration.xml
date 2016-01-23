@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bground"
+    tools:context="com.example.themepractice.RegistrationActivity" >
+
+    <TextView
+        android:id="@+id/u_give"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="U-GIVE"
+        android:textColor="@color/material_grey_100"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/u_give"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/custometext"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:padding="5dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/confirm_email"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/email"
+        android:background="@drawable/custometext"
+        android:hint="Confirm Email Address"
+        android:inputType="textEmailAddress"
+        android:padding="5dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/email_criteria1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirm_email"
+        android:paddingLeft="15dp"
+        android:text="Email Address must be valid"
+        android:textSize="13sp"
+        android:textColor="#FF1A00"
+        android:textStyle="italic" />
+    
+    <TextView
+        android:id="@+id/email_criteria2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email_criteria1"
+        android:paddingLeft="15dp"
+        android:text="Email Addresses do not match"
+        android:textSize="13sp"
+        android:textColor="#99FF00"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/email_criteria2"
+        android:background="@drawable/custometext"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginBottom="1dp"
+        android:padding="5dp"
+        android:textSize="14sp" />
+    
+     <EditText
+        android:id="@+id/confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/password"
+        android:background="@drawable/custometext"
+        android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:padding="5dp"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/password_criteria_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirm_password"
+        android:paddingLeft="15dp"
+        android:text="Password must contain 8 letters"
+        android:textColor="#FF1A00"
+        android:textSize="13sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/password_criteria_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_criteria_1"
+        android:paddingLeft="15dp"
+        android:text="Password must contain at least 1 capital letter"
+        android:textColor="#FF1A00"
+        android:textSize="13sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/password_criteria_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_criteria_2"
+        android:paddingLeft="15dp"
+        android:text="Password must contain at least 1 number"
+        android:textColor="#FF1A00"
+        android:textSize="13sp"
+        android:textStyle="italic" />
+    
+    <TextView
+        android:id="@+id/password_criteria_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_criteria_3"
+        android:paddingLeft="15dp"
+        android:text="Passwords must match"
+        android:textColor="#FF1A00"
+        android:textSize="13sp"
+        android:textStyle="italic" />
+
+    <CheckedTextView
+        android:id="@+id/terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password_criteria_4"
+        android:checked="false"
+        android:drawableLeft="?android:attr/listChoiceIndicatorMultiple"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:text="Agree to Terms of Service and Privacy Policy."
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/create_account"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/terms"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:background="@drawable/buttonshape"
+        android:onClick="startSearch"
+        android:text="Create"
+        android:textColor="#5F82AA"
+        android:textSize="20sp" />
+
+</RelativeLayout>

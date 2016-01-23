@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/image_one"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/u_give"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:contentDescription="Image Placeholder"
+        android:src="@drawable/insert_image_here" />
+
+    <TextView
+        android:id="@+id/content_description_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_one"
+        android:layout_centerHorizontal="true"
+        android:text="Electronic giving made simple"
+        android:textColor="@color/material_grey_100"
+        android:textSize="17sp" />
+
+</RelativeLayout>

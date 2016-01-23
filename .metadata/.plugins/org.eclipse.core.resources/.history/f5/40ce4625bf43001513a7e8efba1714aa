@@ -1,0 +1,112 @@
+package com.gampro;
+
+import java.util.ArrayList;
+
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonBuilderFactory;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+
+public class DoesntMatter {
+
+	// int totalitems = startingItems.size() + coreItems.size() +
+	// endGame.size();
+
+	public static void something(){
+		 JsonObject matchInfo = Json.createObjectBuilder().build();
+		 JsonBuilderFactory factory1 = Json.createBuilderFactory(matchInfo);
+		 JsonObject value1 = (JsonObject) factory1.createObjectBuilder() //builder
+				.add("title", "Champ1 vs Champ2")
+				.add("type", "custom")
+				.add("map", "any")
+				.add("mode", "any")
+				.add("priority", "false")
+				.add("sortrank", 0)
+				.add("blocks", factory1.createArrayBuilder() //blocks
+					.add(factory1.createObjectBuilder() //startItemBuilder
+					.add("type", "Starter Items")
+					.add("recMath", "false")
+					.add("minSummonerLevel", -1)
+					.add("maxSummonerLevel", -1)
+					.add("showIfSummonerSpell", "")
+					.add("hideIfSummonerSpell", "")
+					.add("items", factory1.createArrayBuilder() //itemsList
+						.add(factory1.createObjectBuilder() //itemBuilder
+							.add("id", "1001")
+							.add("count", 1)))))
+				.build();
+		 
+		 JsonObjectBuilder builder = factory1.createObjectBuilder();
+		 builder.add("title", "Champ1 vs Champ2");
+		 builder.add("type", "custom");
+		 builder.add("map", "any");
+		 builder.add("mode", "any");
+		 builder.add("priority", "false");
+		 builder.add("sortrank", 0);
+		 
+		 JsonArrayBuilder blocks = factory1.createArrayBuilder();
+		 builder.add("blocks", blocks);
+		 ArrayList<Integer> startingItems = new ArrayList<Integer>();
+		 ArrayList<Integer> coreItems = new ArrayList<Integer>();
+		 ArrayList<Integer> endGame = new ArrayList<Integer>();
+		 
+		 if(!startingItems.isEmpty()){
+			 JsonObjectBuilder startItemBuilder = factory1.createObjectBuilder();
+			 blocks.add(startItemBuilder);
+			 startItemBuilder.add("type", "Starter Items");
+			 startItemBuilder.add("recMath", "false");
+			 startItemBuilder.add("minSummonerLevel", -1);
+			 startItemBuilder.add("maxSummonerLevel", -1);
+			 startItemBuilder.add("showIfSummonerSpell", "");
+			 startItemBuilder.add("hideIfSummonerSpell", "");
+			 JsonArrayBuilder itemsList = factory1.createArrayBuilder();
+			 startItemBuilder.add("items", itemsList);
+			 for(int i = 0; i < startingItems.size(); i++){
+				 JsonObjectBuilder itemBuilder = factory1.createObjectBuilder();
+				 itemsList.add(itemBuilder);
+				 itemBuilder.add("id", startingItems.get(i).toString());
+				 itemBuilder.add("count", 1);
+			 }
+		 }
+		 if(!coreItems.isEmpty()){
+			 JsonObjectBuilder coreItemBuilder = factory1.createObjectBuilder();
+			 blocks.add(coreItemBuilder);
+			 coreItemBuilder.add("type", "Core Items");
+			 coreItemBuilder.add("recMath", "false");
+			 coreItemBuilder.add("minSummonerLevel", -1);
+			 coreItemBuilder.add("maxSummonerLevel", -1);
+			 coreItemBuilder.add("showIfSummonerSpell", "");
+			 coreItemBuilder.add("hideIfSummonerSpell", "");
+			 JsonArrayBuilder itemsList = factory1.createArrayBuilder();
+			 coreItemBuilder.add("items", itemsList);
+			 for(int i = 0; i < startingItems.size(); i++){
+				 JsonObjectBuilder itemBuilder = factory1.createObjectBuilder();
+				 itemsList.add(itemBuilder);
+				 itemBuilder.add("id", coreItems.get(i).toString());
+				 itemBuilder.add("count", 1);
+			 }
+		 }
+		 if(!endGame.isEmpty()){
+			 JsonObjectBuilder endGameBuilder = factory1.createObjectBuilder();
+			 blocks.add(endGameBuilder);
+			 endGameBuilder.add("type", "Final Items");
+			 endGameBuilder.add("recMath", "false");
+			 endGameBuilder.add("minSummonerLevel", -1);
+			 endGameBuilder.add("maxSummonerLevel", -1);
+			 endGameBuilder.add("showIfSummonerSpell", "");
+			 endGameBuilder.add("hideIfSummonerSpell", "");
+			 JsonArrayBuilder itemsList = factory1.createArrayBuilder();
+			 endGameBuilder.add("items", itemsList);
+			 for(int i = 0; i < startingItems.size(); i++){
+				 JsonObjectBuilder itemBuilder = factory1.createObjectBuilder();
+				 itemsList.add(itemBuilder);
+				 itemBuilder.add("id", coreItems.get(i).toString());
+				 itemBuilder.add("count", 1);
+			 }
+		 } 
+			 
+			 
+	
+	}
+}

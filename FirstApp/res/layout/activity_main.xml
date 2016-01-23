@@ -1,0 +1,60 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:alignmentMode="alignMargins"
+    android:columnCount="2"
+    android:padding="10dp"
+    android:rowCount="3" >
+
+    <Button
+        android:id="@+id/button_sc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="startSc2Activity"
+        android:text="@string/text_sc2" />
+
+    <Button
+        android:id="@+id/button_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="@string/text_about" />
+
+    <Button
+        android:id="@+id/button_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="@string/text_settings" />
+
+    <Button
+        android:id="@+id/button_terran"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:onClick="startTerranActivity"
+        android:text="@string/text_terran" />
+
+    <Button
+        android:id="@+id/button_zerg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="@string/text_zerg" />
+
+    <Button
+        android:id="@+id/button_protoss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="@string/text_protoss" />
+
+</GridLayout>

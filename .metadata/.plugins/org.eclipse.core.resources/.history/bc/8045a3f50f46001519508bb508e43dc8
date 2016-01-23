@@ -1,0 +1,18 @@
+package com.gampro;
+
+import main.java.riotapi.RiotApi;
+import main.java.riotapi.RiotApiException;
+import dto.Summoner.Summoner;
+
+
+public class PracticeJsonSimple {
+
+	public static void main(String[] args) throws RiotApiException {
+		RiotApi api = new RiotApi("bf272907-42f9-4085-9470-1049579d9d2f");
+		
+		Summoner summoner  = api.getSummonerByName("l am Bjerg");
+		
+		summoner.getId;
+		
+	}
+}

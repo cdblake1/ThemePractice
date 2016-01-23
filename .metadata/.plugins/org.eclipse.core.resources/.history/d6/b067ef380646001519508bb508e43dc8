@@ -1,0 +1,28 @@
+package com.gampro;
+
+import java.util.ArrayList;
+
+/*
+ * Pass 3 Arrays
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+
+public class CreateJson {
+
+	public static void readWriteJson() {
+	
+		ArrayList<Integer> startItems = new ArrayList<Integer>();
+		ArrayList<Integer> coreItems = new ArrayList<Integer>();
+		ArrayList<Integer> finalItems = new ArrayList<Integer>();
+
+		for(i = 0; i < 2; i++){
+			
+		}
+	
+	}
+}

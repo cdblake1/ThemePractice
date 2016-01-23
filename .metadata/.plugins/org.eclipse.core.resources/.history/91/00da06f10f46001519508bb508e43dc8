@@ -1,0 +1,54 @@
+package com.gampro;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.json.simple.JSONObject;
+
+public class PracticeJsonSimple {
+
+	public static void main(String[] args) {
+		ArrayList<Integer> startingItems = new ArrayList<Integer>();
+		startingItems.add(1001);
+		startingItems.add(1001);
+		JObjectBuilder jObject = new JObjectBuilder("vs Enemy Champ","Starting Items", startingItems);
+		JSONObject object = jObject.jsonObjectBuilder(startingItems);
+		
+		try {
+			FileWriter file = new FileWriter("c:\\ItemSet.json");
+			file.write(object.toJSONString());
+			file.flush();
+			file.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(object);
+
+//		JSONObject obj = new JSONObject();
+//		obj.put("name", "mkyong.com");
+//		obj.put("age", new Integer(100));
+//
+//		JSONArray list = new JSONArray();
+//		list.add("msg 1");
+//		list.add("msg 2");
+//		list.add("msg 3");
+//
+//		obj.put("messages", list);
+//
+//		try {
+//
+//			FileWriter file = new FileWriter("c:\\test.json");
+//			file.write(obj.toJSONString());
+//			file.flush();
+//			file.close();
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//
+//		System.out.print(obj);
+	}
+}

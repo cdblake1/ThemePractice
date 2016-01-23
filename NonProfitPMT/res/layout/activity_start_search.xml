@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.nonprofitpmt.StartSearch" >
+
+    <EditText
+        android:id="@+id/search_input"
+        android:inputType=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/searchicon"
+        android:drawableRight="@drawable/searchicon"
+        android:hint="Organization Name" 
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/search_input"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/image_app_logo"
+        android:src="@drawable/app_logo" />
+
+</RelativeLayout>

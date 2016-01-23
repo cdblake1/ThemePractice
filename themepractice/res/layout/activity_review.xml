@@ -1,0 +1,236 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg"
+    android:padding="30dp"
+    tools:context="com.example.themepractice.ReviewActivity" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/institution_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Institution Information"
+            android:textColor="@color/church"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/institution_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/institution_header"
+            android:columnCount="2"
+            android:rowCount="5" >
+
+            <TextView
+                android:id="@+id/institution_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Institution:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/institution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="Made Up Church"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/street_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_title"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Street:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/street"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution"
+                android:layout_toRightOf="@id/street_title"
+                android:text="1111 Imaginary Lane"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/city_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="City:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="Gotham"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/state_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="State:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="Florida"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/code_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Code:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="123456"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/payment_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/institution_holder"
+            android:text="Payment Information"
+            android:textColor="@color/church"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:id="@+id/payment_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/payment_header"
+            android:columnCount="2"
+            android:rowCount="5" >
+
+            <TextView
+                android:id="@+id/card_type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Type:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="Visa"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/cardholder_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Cardholder:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/cardholder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="Caleb Blake"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/card_number_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingRight="10dp"
+                android:text="Card Number:"
+                android:textColor="@color/street"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/institution_header"
+                android:layout_toRightOf="@id/institution_title"
+                android:text="1234-4321-6789-9876"
+                android:textColor="@color/state"
+                android:textSize="14sp" />
+        </GridLayout>
+        
+        <TextView
+            android:id="@+id/total_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/payment_holder"
+            android:paddingTop="30dp"
+            android:paddingRight="5dp"
+            android:text="TOTAL"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/street"/>
+        
+        <TextView 
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/payment_holder"
+            android:layout_toRightOf="@id/total_title"
+            android:paddingTop="30dp"
+            android:textSize="18sp"
+            android:text="$77.77"
+            android:textColor="@color/state"/>
+            
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1436241434631_1" label="SideScrollerGame" name="SideScrollerGame">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SideScrollerGame-core" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SideScrollerGame-desktop" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SideScrollerGame-html" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SideScrollerGame" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/SideScrollerGame-ios" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1435545738865_0" label="Window Working Set" name="Aggregate for window 1435545738864"/>
+</workingSetManager>

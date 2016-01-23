@@ -1,0 +1,24 @@
+1449063455277	Rename type 'MainActivity'
+1449063602910	Rename resource 'activity_main.xml'
+1449068274562	Delete element
+1449082366409	Delete element
+1449082387202	Delete element
+1449082394340	Delete element
+1449083010802	Rename type 'LoginActivtiy'
+1449083024305	Rename resource 'activity_login_activtiy.xml'
+1449087043818	Rename type 'LoginActivity'
+1449087068030	Rename resource 'activity_login.xml'
+1449151249109	Move compilation unit
+1449151256660	Move compilation unit
+1449151269309	Move compilation unit
+1449151304209	Rename package 'com.example.themepractice.landingpage'
+1449151334049	Move compilation unit
+1449151342351	Move compilation unit
+1449151350677	Move compilation unit
+1449151362017	Move compilation unit
+1449160782634	Move compilation unit
+1449242564955	Rename resource 'land_frag_one.xml'
+1449242575991	Rename resource 'frag_land_one'
+1449322689996	Rename resource '01.jpg'
+1449323412600	Rename resource 'Molot.otf'
+1449325971600	Rename resource 'buttonShape.xml'

@@ -1,0 +1,112 @@
+package com.gampro;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import com.google.gson.JsonObject;
+
+import main.java.riotapi.RiotApi;
+import main.java.riotapi.RiotApiException;
+import constant.Region;
+import dto.Match.Event;
+import dto.Match.Frame;
+import dto.Match.MatchDetail;
+import dto.Match.ParticipantIdentity;
+import dto.MatchList.MatchList;
+
+public class Test {
+	};
+
+	public static void main(String[] args) throws RiotApiException {
+		Test.readWriteJson(Region.NA, "Win Win", 1913790383l, 2648l);
+	}
+
+	public static void readWriteJson() throws RiotApiException {
+
+		RiotApi api = new RiotApi("bf272907-42f9-4085-9470-1049579d9d2f");
+		
+		MatchList matches = api.getMatchList(Region.NA, 2648);
+		
+		for(int i = 0; i < matches.getTotalGames(); i++){
+			
+		}
+
+//		MatchDetail matchOne = api.getMatch(Region.NA, matchId, true);
+
+		// collects frames from game
+		ArrayList<Frame> frameList = new ArrayList<Frame>();
+		frameList.addAll((Collection<? extends Frame>) matchOne.getTimeline()
+				.getFrames());
+
+		// stores summoner's id local to the match
+		int sumPartId = 0;
+		for (ParticipantIdentity participant : matchOne
+				.getParticipantIdentities()) {
+			if (participant.getPlayer().getSummonerId() == sumId) {
+				sumPartId = participant.getParticipantId();
+			}
+		}
+		// item purchase, counter++ add item id, item sold/destroyed/undo,
+		// counter++ subtract item id
+		// grabs starting items from frame 1 & 2
+
+		ArrayList<BlockForItems> allEvents = new ArrayList<BlockForItems>();
+		
+		for (int i = 1; i < frameList.size(); i++) {
+			ArrayList<Integer> items = new ArrayList<Integer>();
+			BlockForItems block = new BlockForItems(items);
+			for (int j = 0; j < frameList.get(i).getEvents().size(); j++) {
+				Event event = frameList.get(i).getEvents().get(j);
+				if (event.getParticipantId() == sumPartId) {
+					if (event.getEventType().equals("ITEM_PURCHASED")) {
+						items.add(event.getItemId());
+						block.setItems(items);
+					} else if (event.getEventType().equals("ITEM_UNDO")) {
+						items.remove(items.lastIndexOf((Integer) event
+								.getItemId()));
+						block.setItems(items);
+					}
+				}
+			}
+			if(!(block.getItems().isEmpty())){
+			allEvents.add(block);
+			}
+		}
+		
+		for(int i = 0; i < frameList.size(); i++){
+			System.out.println("~" + frameList.get(i).getTimestamp()/60000 + ":00");
+		}
+				int counter = 0;
+		System.out.println(allEvents.size());
+		for (int i = 0; i < allEvents.size(); i++) {
+			counter++;
+			for (int j = 0; j < allEvents.get(i).getItems().size(); j++) {
+				int blocks = allEvents.get(i).getItems().get(j);
+				System.out.println(api.getDataItem(blocks).getName());
+			}
+			System.out.println(counter);
+		}
+		 for (BlockForItems itemId : allEvents) {
+		 for (int i = 0; i < itemId.getItems().size(); i++) {
+		 System.out.println(api.getDataItem(itemId.getItems().get(i))
+		 .getName());
+		 }
+		 }
+		 JsonObject jObject = GsonFileBuilder.gsonToJsonBuilder(allEvents);
+		 try {
+		 FileWriter file = new FileWriter(
+		 "C:\\Riot Games\\League of Legends\\Config\\Champions\\Cassiopeia\\Recommended\\"
+		 + "ItemSet_" + matchId + ".json");
+		
+		 file.write(jObject.toString());
+		 file.flush();
+		 file.close();
+		
+		 } catch (IOException e) {
+		 e.printStackTrace();
+		 }
+		 System.out.println(jObject.toString());
+	}
+}

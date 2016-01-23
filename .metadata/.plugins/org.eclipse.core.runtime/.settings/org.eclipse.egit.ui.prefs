@@ -1,0 +1,3 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Finished the core of the game</message>\r\n<message>Creating SideScroller</message>\r\n<message>Created Runner object ; Added Actors to Runner and Ground</message>\r\n<message>Made a stage for the world</message>\r\n<message>Added README &amp; changed background to blue</message>\r\n</messages>
+eclipse.preferences.version=1
+show_initial_config_dialog=false

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;CustomListAdapter.java&apos; to &apos;customlistviewproperty/src/info.androidhive.customlistviewvolley.adater&apos;&#x0D;&#x0A;- Original project: &apos;customlistviewproperty&apos;&#x0D;&#x0A;- Destination element: &apos;customlistviewproperty/src/info.androidhive.customlistviewvolley.adater&apos;&#x0D;&#x0A;- Original element: &apos;info.androidhive.customlistviewvolley.model.CustomListAdapter.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;info.androidhive.customlistviewvolley.adater" element1="/src&lt;info.androidhive.customlistviewvolley.model{CustomListAdapter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1447346203457" units="1" version="1.0"/>
+</session>

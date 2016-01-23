@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">themepractice</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_landing_page">LandingPage</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_login_activtiy">LoginActivtiy</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_pmt_info">PmtInfoActivity</string>
+    <string name="title_activity_review">ReviewActivity</string>
+
+</resources>

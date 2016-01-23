@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bground"
+    tools:context="com.example.themepractice.LoginActivity" >
+
+    <TextView
+        android:id="@+id/u_give"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:paddingBottom="50dp"
+        android:text="U-GIVE"
+        android:textColor="@color/material_grey_100"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/u_give"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/custometext"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@id/email"
+        android:background="@drawable/custometext"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonshape"
+        android:onClick="startSearch"
+        android:text="Login"
+        android:layout_margin="4dp"
+        android:textColor="#5F82AA"
+        android:textSize="20sp" />
+
+</RelativeLayout>

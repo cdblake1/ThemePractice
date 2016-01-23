@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:background="@color/bg"
+    android:padding="5dp"
+    tools:context="com.example.listview.ListViewActivity" >
+
+    <TextView
+        android:id="@+id/church"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textStyle="bold|italic"
+        android:text="First Baptist Church at the Mall"
+        android:textColor="@color/church"
+        android:textSize="@dimen/church" />
+    
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/church"
+        android:paddingEnd="0dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="0dp"
+        android:paddingStart="5dp"
+        android:textStyle="italic"
+        android:text="Lakeland"
+        android:textColor="@color/city"
+        android:textSize="@dimen/city" />
+
+    <TextView
+        android:id="@+id/street"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/city"
+        android:text="1960 De La Palma Ave"
+        android:textColor="@color/street"
+        android:textSize="@dimen/street" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="10dp"
+        android:textStyle="bold"
+        android:text="FL"
+        android:textColor="@color/state"
+        android:textSize="@dimen/state" />
+
+</RelativeLayout>

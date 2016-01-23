@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="church">17dp</dimen>
+    <dimen name="city">15dp</dimen>
+    <dimen name="street">12dp</dimen>
+    <dimen name="state">25dp</dimen>
+
+</resources>

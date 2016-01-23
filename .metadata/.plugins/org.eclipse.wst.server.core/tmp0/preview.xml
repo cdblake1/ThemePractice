@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="itemsets" name="itemsets" path="C:/Users/Caleb Blake/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/itemsets" type="j2ee"/>
+  <module context="firstproject" name="firstproject" path="C:/Users/Caleb Blake/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/firstproject" type="j2ee"/>
+</server>

@@ -1,0 +1,20 @@
+
+public class Rofl {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		for(int i = 1; i < 504; i++ ){
+			double pmt = 1143.18;
+			double rate = .085/12;
+			double month = (pmt * rate) + pmt;
+			System.out.println("Month " + i +":" + "Funds: " +"$"+ month);
+			pmt = month + 1143.18;
+			
+			
+		}
+			
+	}
+
+}

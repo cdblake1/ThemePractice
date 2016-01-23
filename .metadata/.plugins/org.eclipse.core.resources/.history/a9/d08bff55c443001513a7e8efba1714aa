@@ -1,0 +1,148 @@
+package com.gampro;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonBuilderFactory;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+
+import main.java.riotapi.RiotApi;
+import constant.Region;
+import dto.Match.Event;
+import dto.Match.Frame;
+import dto.Match.MatchDetail;
+import dto.Match.ParticipantIdentity;
+import dto.MatchList.MatchList;
+import dto.Summoner.Summoner;
+
+public class DoesntMatter {
+
+	public static void exportBuilder(Long summonerId){
+	
+		RiotApi api = new RiotApi("bf272907-42f9-4085-9470-1049579d9d2f");
+		
+		api.setRegion(Region.NA);
+		Long champId = summonerId;
+		
+		MatchList matchList =  api.getMatchList(champId);
+		ArrayList<Long> matchRef = new ArrayList<Long>();
+		for(int i = 0; i < matchList.getEndIndex(); i++){
+			matchRef.add((Long)matchList.getMatches().get(i).getMatchId());
+		}
+		
+		ArrayList<Integer> items = new ArrayList<Integer>();
+		for(int k = 50; k < 51; k++){
+			items.clear();
+			ArrayList<Frame> frameList = new ArrayList<Frame>();
+			Long matchOneId = matchRef.get(k);
+			MatchDetail matchOne = api.getMatch(matchOneId, true);
+			frameList.addAll((Collection<? extends Frame>)matchOne.getTimeline().getFrames());
+			System.out.println("\nMatch ID: " + matchRef.get(k));
+			
+	//		System.out.println(frameList.get(1).getEvents().size());
+			int sumPartId = 0;
+			for(ParticipantIdentity participant : matchOne.getParticipantIdentities()){
+				if(participant.getPlayer().getSummonerId() == champId){
+					sumPartId = participant.getParticipantId();
+				}
+			}
+			ArrayList<Integer> startingItems = new ArrayList<Integer>();
+			//grabs starting items from frame 1
+			for(Event event : frameList.get(1).getEvents()){
+				if(event.getParticipantId() == sumPartId && event.getEventType().equals("ITEM_PURCHASED")){
+					startingItems.add(event.getItemId());
+				}
+			}
+			//if frame 1 doesnt have starting items, get it from frame 2
+			if(startingItems.isEmpty()){
+				for(Event startItem : frameList.get(2).getEvents()){
+					if(startItem.getParticipantId() == sumPartId && startItem.getEventType().equals("ITEM_PURCHASED")){
+						startingItems.add(startItem.getItemId());
+					}
+				}
+			}
+			
+			ArrayList<Integer> coreItems = new ArrayList<Integer>();
+			ArrayList<Integer> endGame = new ArrayList<Integer>();
+			List<Integer> storedItemArrayList = Arrays.asList(storedItemIds);
+			//stores the first three items as core items
+			//stores the rest of the items as end game items
+			for(int i = 3; i < frameList.size(); i++){	
+				for(int j = 0; j < frameList.get(i).getEvents().size(); j++){
+					Event curEvent = frameList.get(i).getEvents().get(j);
+					if(curEvent.getParticipantId() == sumPartId && curEvent.getEventType().equals("ITEM_PURCHASED")){
+						if(storedItemArrayList.contains(curEvent.getItemId())){
+							if(coreItems.size() < 3){
+								coreItems.add(curEvent.getItemId());
+							}else{
+								endGame.add(curEvent.getItemId());
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private static JsonObject createJsonItemSetObject(String enemyChamp,
+			ArrayList<Integer> startingItems, ArrayList<Integer> coreItems,
+			ArrayList<Integer> endGame) {
+		JsonObject matchInfo = Json.createObjectBuilder().build();
+		JsonBuilderFactory factory1 = Json.createBuilderFactory(matchInfo);
+		JsonObjectBuilder builder = factory1.createObjectBuilder();
+		builder.add("title", "vs " + enemyChamp);
+		builder.add("type", "custom");
+		builder.add("map", "any");
+		builder.add("mode", "any");
+		builder.add("priority", "false");
+		builder.add("sortrank", 0);
+
+		JsonArrayBuilder blocks = factory1.createArrayBuilder();
+		builder.add("blocks", blocks);
+
+		JsonObjectBuilder startItemBuilder, coreItemBuilder, endGameBuilder;
+		if ((startItemBuilder = createItemListBuilder("Starting Items",
+				startingItems, factory1)) != null) {
+			blocks.add(startItemBuilder);
+		}
+		if ((coreItemBuilder = createItemListBuilder("Core Items", coreItems,
+				factory1)) != null) {
+			blocks.add(coreItemBuilder);
+		}
+		if ((endGameBuilder = createItemListBuilder("Final Items", endGame,
+				factory1)) != null) {
+			blocks.add(endGameBuilder);
+		}
+		return builder.build();
+	}
+
+	private static JsonObjectBuilder createItemListBuilder(String type,
+			ArrayList<Integer> itemList, JsonBuilderFactory factory) {
+		JsonObjectBuilder itemListBuilder = null;
+		if (!itemList.isEmpty()) {
+			itemListBuilder = factory.createObjectBuilder();
+			itemListBuilder.add("type", type);
+			itemListBuilder.add("recMath", "false");
+			itemListBuilder.add("minSummonerLevel", -1);
+			itemListBuilder.add("maxSummonerLevel", -1);
+			itemListBuilder.add("showIfSummonerSpell", "");
+			itemListBuilder.add("hideIfSummonerSpell", "");
+			JsonArrayBuilder itemListArrayBuilder = factory
+					.createArrayBuilder();
+			itemListBuilder.add("items", itemListArrayBuilder);
+			for (int i = 0; i < itemList.size(); i++) {
+				JsonObjectBuilder itemBuilder = factory.createObjectBuilder();
+				itemListArrayBuilder.add(itemBuilder);
+				itemBuilder.add("id", itemList.get(i).toString());
+				itemBuilder.add("count", 1);
+			}
+		}
+		return itemListBuilder;
+
+	}
+}
